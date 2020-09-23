@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showroon(){
+            var name = document.getElementById("mylist").value;
+            if(name == "Laptop")
+            {
+                var productName = ['Lenova', 'Sony', 'HP'];
+                document.getElementById("display").innerHTML = productName.join("<br>");
+            }
+            else if(name == "Mobile")
+            {
+                var productName = ['iPhone', 'Samsung', 'Sony'];
+                document.getElementById("display").innerHTML = productName.join("<br>");
+            }
+            else if(name == "TV")
+            {
+                var productName = ['onida','LG'];
+                document.getElementById("display").innerHTML = productName.join("<br>");
+            }
+            
+            
+        }
+
+
+    </script>
+</head>
+<body>
+    <div>
+          Showroom <select name="list" id="mylist" onclick="showroom()">
+            <option selected="" value="Default">--Select--</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Mobile">Mobile</option>
+            <option value="TV">TV</option>
+        </select>
+    </div>
+    <br>
+    <div style="background-color:yellow"> <span id="display"></span></div>
+    
+</body>
+</html>
+
+        
+    

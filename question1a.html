@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script>
+        function validate(){
+            var uname=document.getElementById("name").value;
+            var password=document.getElementById("pass").value;
+            var mobile=document.getElementById("ph").value;
+            var place=document.getElementById("city").value;
+            var arr=[ "raju","ram","sam"];
+            if(uname==""){
+                alert("enter username");
+                document.myform.username.focus();
+            }
+            else if(uname.length<3){
+                alert("enter proper name");
+                document.myform.username="";
+                document.myform.username.focus();
+            }
+            else if(password== "")
+            {
+                alert("enter password");
+                document.myform.password="";
+                document.myform.password.focus();    
+            }
+            else if((password.match("^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*])"))){
+                alert("enter password with atleast one uppercase,one lowercase,one number,one special charcter and length of 8 characters");
+                document.myform.password="";
+                document.myform.password.focus();
+            }
+            else if(mobile==""||mobile.length<10||!mobile.match("^(?=.[a-z])(?=.[A-Z])(?=.[!@#\$%\^&\*]")){
+                alert("enter phone number");
+                document.myform.phone="";
+                document.myform.phone.focus();
+
+            }
+            else if(place==""){
+                alert("enter city");
+                document.myform.city.focus();
+            }
+            else{
+                 for (i=0;i<arr.length;i++)
+              { 
+                  if(uname == arr[i]) 
+            {
+                alert("already a user");
+                document.myform.value();
+            }
+        }
+        alert("registration sucessfull");
+        document.myform.submit();
+		
+		
+	}   
+}      
+    </script>
+</head>
+<body>
+    <form action="question1a.html" name="myform" id="id">
+        <table>
+            <tr>
+                <th>Registration Form</th>
+            </tr>
+            <tr>
+                <td>Username:</td>
+                <td colspan="2"><input type="text" name="username" id="name"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td colspan="2"> <input type="password" name="password" id="pass"></td>
+            </tr>
+            <tr>
+                <td>phone:</td>
+                <td colspan="2"><input type="text" name="phone" id="ph"></td>
+            </tr>
+            <tr>
+                <td>city:</td>
+                <td colspan="2"><input type="text" name="city" id="city"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="register" onclick="validate()">
+                </td>
+                <td><input type="reset" value="clear"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
