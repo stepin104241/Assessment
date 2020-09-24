@@ -1,0 +1,20 @@
+[
+    {
+        "name":"abc",
+        "city":"mysore",
+        "type": "veg",
+        "cusine": ["indian","chinese"]
+    },
+    {
+        "name":"xyz",
+        "city":"bangalore",
+        "type": "nonveg",
+        "cusine": ["indian","continental"]
+    },
+    {
+        "name":"abc",
+        "city":"mangalore",
+        "type": "nonveg",
+        "cusine": ["thai","chinese"]
+    }
+]
