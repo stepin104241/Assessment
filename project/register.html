@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Register page</title>
+	<script>
+	function validateForm(){
+        var emp=["Sonoo","Vimal","Ratan"];  
+	username = document.myform.uname.value;
+	password = document.myform.pass.value;
+	age = document.myform.age.value; 
+	if(username ==""||username.length<3){
+		alert("enter your name");
+		document.myform.uname.focus();
+      
+	}
+         if (password ==""||(!password.match(/[A-Z]/))){
+		alert("enter your password");
+		document.myform.pass.value="";
+		document.myform.pass.focus();
+	}else if (age ==""||isNaN(age)){
+		alert("enter your age");
+		document.myform.age.value="";
+		document.myform.age.focus();
+	}else if(document.myform.gender[0].checked==""
+			&&document.myform.gender[1].checked==""){
+		alert("enter gender");
+		document.myform.gender[0].focus();
+	}else{
+        for (i=0;i<emp.length;i++)
+        { 
+            if(username == emp[i]) 
+            {
+                alert("User already Exists");
+                document.myform.value();
+            }
+        }
+		alert("You are registered")
+		document.myform.submit();
+        
+	}
+    
+}		
+    </script>
+    <style>
+       body{
+    background-image: url("https://www.google.com/search?sa=X&biw=1920&bih=1040&sxsrf=ALeKk01o7fxVAeO29Gek2DEiNw58EB9epw:1600918464778&q=Composition+8&stick=H4sIAAAAAAAAAH2TvW_TQBiH44h-ua3UtEuJQIRMpUt8d3ESD6iVygASqKhCjFjxpXEa-84-38lfE-IvQAxMICQWGFgYWEBiYCNDBiTY-BATTDAyIJU02M6x4MmP7_Xz3v1e3eJcXW2Qhgb1XjhM4Wn3iIua1691LS6CLha1biAiL3D4SFlp2A0AYNI3hGiPlOlvtMcd0clAT2nT1UbK6rTQasUDkGA7Z-wIO-IBGinLJwyBraXuRLt08mtTDE2WvevE4kFhiRjVAWwWFiT6Zp9EWUvEWOLbGRiOa9jObCWicdFMWC7FWYOWa1phfp4B4KIXF7vGOsLJ0KGZ5W8sM2XKWa6EZpN04kzDYDwwglZf2jaxwhTIx2gCTOQwhAuNXKa5CEZpQayHfCzXxojOGiOEaU8KIA0ysAftSOOzAYQGDFKcVxLL0R0pR1tLEMilCLmhpc-kJvNnEBu0gEBDMug5pGJIfPHPsCeDzBJvA0xDubVBiJmzbVGIA9_KovRTKPwmY5nXilNkJ9KZJgR7sstiHSAzsTVTnkOoIyavt02WflU-K8tr33992qi-V-49e_tBGSvq0rVDYh0GfL-_fqCqe57rHmJx5NH1S-r56tkGLj408tth5rdjq1Q9p_6_pE7gzZfv7o_nr1cuvzo-fvJxf7d6YXtdXbjCr3q461bG9u9HZ1782NneUBdvdGOPeiSplKbPz536ZuX5Qvn2xVvG7ma5Vt5SQPVb-cvDB_Xd7dLBNGNgtHnrzuunb-ZPLSprpZXHc6t7HvE9fnSyn1rn7rzyB4q0-ILtAwAA&ved=2ahUKEwjM86CD7oDsAhVi8HMBHavQBgYQ-BYwM3oECB8QXA");
+   -webkit-background-size:cover;
+   -moz-background-size:cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+        table{
+            margin-left: 800px;
+            margin-top: 200px;
+            border:2px;
+            border-width: 10px;
+            
+        }
+        h1{
+            font-size: 40px;
+            margin-top: 50px;
+        }
+        td{
+            font-size: 20px;
+        }
+        </style>
+    
+</head>
+<body>
+<form action="login.html" name="myform"><div>
+    <h1 style="margin-left: 800px;"> Registration Form</h1>
+    <table  >
+        <tr>
+            <td>
+               Name</td><td colspan="2"><input type="text" name="uname" id="username" ><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+  Password </td><td colspan="2"><input type="password" name="pass" id="password"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+    Age</td><td colspan="2"><input type="text" name="age" id="age" ><br>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+  Phone number </td><td colspan="2"><input type="number" name="number" id="number"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+  Email-ID </td><td colspan="2"><input type="text" name="number" id="email"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              Gender
+            </td>
+            <td>  Female <input type="radio" name="gender" id="gen1"   value="female"  >
+                Male <input type="radio" name="gender" id="gen2" value="male" >
+            </td> 
+        </tr>
+        <tr>
+             <td colspan="2px">
+                <input type="button" value="Register " onclick="validateForm()" style="align-items: center;">
+                <input type="reset" value="Clear"> 
+            </td>
+        </tr>
+        
+    </table>
+    </div>   
+  
+</form>
+
+</body>
+</html>
