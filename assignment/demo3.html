@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printmsg() {
+          var x = document.getElementById("myid").value;
+          document.getElementById("display").innerHTML = x;
+        }
+        </script>
+</head>
+<body>
+    enter message
+   <input type="text" id="myid" onkeyup="printmsg()">
+   <div style="background-color: yellow;"> <span id="display"></span></div>
+</body>
+</html>

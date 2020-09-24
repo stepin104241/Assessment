@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function selection(){
+            var a= document.getElementById('input').value;
+           if (a ==="laptops"){
+            document.write("Laptops: HP" <br> " Dell"<br>"Lenovo");
+}
+else if(a==="mobile phones"){
+    document.write("Mobile?: Iphone"<br>"nokia");
+    }
+else document.write("Cars: audi"<br>"Ferari");
+
+            document.getElementById('output').innerHTML=a;
+        }
+    </script>
+</head>
+<body>
+    <select id="input" onchange="selection()" >
+        
+        <option value="laptops">laptops</option>
+		<option value="mobile phones">mobile phones</option>
+        <option value="car">car</option>
+        <div>
+            <select id="output" onchange="selection()">
+     
+          </div>
+    </select>
+    
+
+</body>
+</html>

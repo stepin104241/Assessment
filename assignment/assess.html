@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form Validation</title>
+	<script>
+	function validateForm(){
+        var emp=["Sonoo","Vimal","Ratan"];  
+	username = document.myform.uname.value;
+	password = document.myform.pass.value;
+	age = document.myform.age.value; 
+	if(username ==""){
+		alert("enter your name");
+		document.myform.uname.focus();
+    }
+    else if (username.length<3 || username.length>15){
+        alert("enter the proper name");
+		document.myform.uname.focus();
+    }
+    else if (password ==""){
+		alert("enter your password");
+		document.myform.pass.value="";
+		document.myform.pass.focus();
+	}
+    else if (!password.match("^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*])(?=.{8,})")){
+        alert("The password must contain:\natleast 1 uppercase letter\natleast 1 lowercase letter\natleast 1 number\natleast 1 special character !@#$%^&*");
+		document.myform.pass.value="";
+		document.myform.pass.focus();
+    }
+    else if (age ==""||isNaN(age)||age.value<18){
+		alert("enter your age");
+		document.myform.age.value="";
+		document.myform.age.focus();
+	}
+    else if(document.myform.gender[0].checked==""
+			&&document.myform.gender[1].checked==""){
+		alert("enter gender");
+		document.myform.gender[0].focus();
+	}else{
+        for (i=0;i<emp.length;i++)
+        { 
+            if(username == emp[i]) 
+            {
+                alert("User already Exists");
+                document.myform.value();
+            }
+        }
+		alert("You are registered")
+		document.myform.submit();
+        
+	}
+    
+}		
+	</script>
+</head>
+<body>
+<form action="login.html" name="myform">
+    <h1 style="margin-left: 200px;"> Registration Form</h1>
+    <table  style="margin-left: 200px"; >
+        <tr>
+            <td>
+              Enter Name</td><td colspan="2"><input type="text" name="uname" id="username" ><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+ Enter Password </td><td colspan="2"><input type="password" name="pass" id="password"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+   Enter Age</td><td colspan="2"><input type="text" name="age" id="age" ><br>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              Gender
+            </td>
+            <td>  Female <input type="radio" name="gender" id="gen1"   value="female"  >
+                Male <input type="radio" name="gender" id="gen2" value="male" >
+            </td> 
+        </tr>
+        <tr>
+             <td colspan="2px">
+                <input type="button" value="Register " onclick="validateForm()" style="align-items: center;">
+                <input type="reset" value="Clear"> 
+            </td>
+        </tr>
+        
+    </table>
+  
+</form>
+
+</body>
+</html>

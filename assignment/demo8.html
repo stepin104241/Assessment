@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function selection(){
+            var opt= document.getElementById('input').value;
+            if(opt === "chrome"){
+                document.write("the browser your using is chrome");
+            }
+            else if( opt === "firefox"){
+                document.write("the browser your using is firefox");
+            }
+            else {
+                document.write("the browser your using is opera");
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <label for="myBrowser">choose a browser option</label>
+    <input list="browsers" id="myBrowser" name="myBrowser" onchange="selection()"/>
+    <datalist id="browsers">
+        <option value="chrome"></option>
+        <option value="firefox"></option>
+        <option value="Opera"></option>
+    </datalist>
+</body>
+</html>
